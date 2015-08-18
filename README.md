@@ -27,4 +27,4 @@ The latter (MLAB_PACKAGES) is only required if you place dlib in a different pac
 
 Since dlib is mostly a header-only library, there is no need to actually compile the sources into a static library. However, I added the project profile to do so, if you would need it. By default, I commented-out the inclusion of the dlib-lib in the pri-file.
 
-This code is slightly different from the original source code, because I multi-threaded part of the optimization library with OpenMP (see commit b509d9633bdc05ca3f56136c6865881dfc286847).
+This code is slightly different from the original source code, because I multi-threaded part of the optimization library with OpenMP (see commit b509d9633bdc05ca3f56136c6865881dfc286847 ).
