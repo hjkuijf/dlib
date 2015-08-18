@@ -10,6 +10,9 @@
 #include "optimization_stop_strategies.h"
 #include "optimization_line_search.h"
 
+// OpenMP include
+#include <omp.h>
+
 namespace dlib
 {
 
@@ -33,6 +36,7 @@ namespace dlib
 
             typename T::matrix_type der(x.size());
             typename T::matrix_type e(x);
+#pragma omp parallel for firstprivate(e)
             for (long i = 0; i < x.size(); ++i)
             {
                 const double old_val = e(i);
@@ -59,6 +63,7 @@ namespace dlib
 
             typename U::matrix_type der(x.size());
             typename U::matrix_type e(x);
+#pragma omp parallel for firstprivate(e)
             for (long i = 0; i < x.size(); ++i)
             {
                 const double old_val = e(i);
